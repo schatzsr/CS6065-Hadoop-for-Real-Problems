@@ -18,8 +18,9 @@ for line in sys.stdin:
         continue
 print "President Santa Ono's hourly average tweets:"
 
-for key in vals.keys():
-    print "%s:\t%s" % (key, vals[key])
+
+for key in vals[].keys():
+    print "%s:\t%s" % (key, float(vals[key])/total)
 
 
 print "total tweets: ", total
