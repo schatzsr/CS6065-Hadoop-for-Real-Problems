@@ -15,4 +15,5 @@ for line in sys.stdin:
             day = date_field[:3]
             print '%s\t1' % day
     except:
+        continue
         #print '%s\t1' % traceback.print_exc()
