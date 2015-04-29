@@ -1,0 +1,3 @@
+#!/bin/bash
+hadoop fs -rm -r /user/schatzsr/$2
+hadoop jar $HADOOP_INSTALL/share/hadoop/tools/lib/hadoop-streaming-2.6.0.jar -input $1 -output $2 -file tfidfTop2_map.py tfidfTop2_reduce.py -mapper tfidfTop2_map.py -reducer tfidfTop2_reduce.py
