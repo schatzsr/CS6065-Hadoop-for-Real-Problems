@@ -40,7 +40,7 @@ for user in user_list:
         top_dict[username] = [1, value]
 
 sorted_user = sorted(top_dict.items(), key=lambda e: e[1][1])
-print sorted_user
+#print sorted_user
 for user in sorted_user[:5]:
     print str(user[0]) + '\t' + str(user[1][0]) + '\t' + str(user[1][1])
 #print 'break \n'
