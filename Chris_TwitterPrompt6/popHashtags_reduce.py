@@ -30,7 +30,7 @@ for line in sys.stdin:
     except:
         continue
 
-# Finding the max for each day and placing it in a new dict to hold these vals
+# Finding the max for each day
 for key1 in days.keys():
     tmp_tag = ""
     tmp_max = 0
@@ -40,6 +40,8 @@ for key1 in days.keys():
             tmp_max = days[key1][key2]
     print "%s\t%s\t%s" % (key1,tmp_tag,tmp_max)
 
+
+# Finding the max for each hour
 for key1 in hours.keys():
     tmp_tag = ""
     tmp_max = 0
