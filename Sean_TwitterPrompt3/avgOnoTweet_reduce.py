@@ -15,14 +15,13 @@ others_tweet_count = 0
 
 for line in sys.stdin:
     try:
-        (key,val) = line.strip().split('\t')
-        val = val.split(',')
+        (key, length_sum, tweet_count) = line.strip().split('\t')
         if key == 'PrezOno':
-            prezono_length_sum += int(val[0])
-            prezono_tweet_count += int(val[1])
+            prezono_length_sum += int(length_sum)
+            prezono_tweet_count += int(tweet_count)
         elif key == 'OtherUser':
-            others_length_sum += int(val[0])
-            others_tweet_count += int(val[1])
+            others_length_sum += int(length_sum)
+            others_tweet_count += int(tweet_count)
     except:
         continue
 

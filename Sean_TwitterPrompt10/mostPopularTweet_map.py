@@ -5,25 +5,17 @@
 
 import sys
 import string
-import json
 
 
 day_dict = dict()
 
-# Commented lines are for using the tweet text instead of tweet id
+# Input in the form "screenname \t tweet_length \t tweet_date \t popularity \t tweet_id"
 for line in sys.stdin:
-    tweet = json.loads(line)
     try:
-        created_at = tweet['created_at']
-        tweet_date = created_at[4:10]
-        # text = tweet['text']
-        tweet_id = tweet['id']
-        retweet_count = tweet['retweet_count']
-        favorite_count = tweet['favorite_count']
-        popularity = max(retweet_count, favorite_count)
+        (screenname, tweet_length, tweet_date, popularity, tweet_id) = line.strip().split('\t')
+        popularity = int(popularity)
 
         if (tweet_date not in day_dict.keys()) or (day_dict[tweet_date][0] < popularity):
-            # day_dict[tweet_date] = (popularity, text)
             day_dict[tweet_date] = (popularity, tweet_id)
         
     except:

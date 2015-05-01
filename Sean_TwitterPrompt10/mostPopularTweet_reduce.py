@@ -9,20 +9,16 @@ import string
 
 day_dict = dict()
 
-# Commented lines are for using the tweet text instead of tweet id
 for line in sys.stdin:
     try:
-        # (key, popularity, text) = line.strip().split('\t')
         (key, popularity, tweet_id) = line.strip().split('\t')
         popularity = int(popularity)
         
         if (key not in day_dict.keys()) or (day_dict[key][0] < popularity):
-            # day_dict[key] = (popularity, text)
             day_dict[key] = (popularity, tweet_id)
 
     except:
         continue
 
 for key in day_dict.keys():
-    # print 'Most popular tweet for %s: %s' % (key, day_dict[key][1])
     print 'Most popular tweet for %s (id only): %s' % (key, day_dict[key][1])
